@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Information</title>
+</head>
+<body>
+
+<div align="center">
+  <h1>Student List</h1>
+
+  <a href="/new">Add New Student</a>
+
+  <table border="1">
+    <tr>
+      <th>ID</th>
+      <th>NAME</th>
+      <th>CITY</th>
+      <th>ACTION</th>
+    </tr>
+
+<!--    studentList - from StudentController - viewHomePage-->
+    <tr th:each="student : ${studentList}">
+      <td th:utext="${student.sid}">..</td>
+      <td th:utext="${student.sname}">..</td>
+      <td th:utext="${student.scity}">..</td>
+      <td>
+        <a th:href="@{'/edit/' + ${student.sid}}">Edit</a>
+        &nbsp;&nbsp;&nbsp;
+        <a th:href="@{'/delete/' + ${student.sid}}">Delete</a>
+      </td>
+    </tr>
+
+
+  </table>
+</div>
+
+</body>
+</html>
