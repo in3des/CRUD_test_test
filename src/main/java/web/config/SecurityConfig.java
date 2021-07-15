@@ -2,6 +2,7 @@ package web.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -15,6 +16,7 @@ import web.config.handler.LoginSuccessHandler;
 
 @Configuration
 @EnableWebSecurity
+@EnableJpaRepositories
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 //    @Bean
